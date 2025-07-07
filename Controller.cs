@@ -81,8 +81,14 @@ namespace DbConnection
             conn.Close();
         }
 
+        public void CloseConnection()
+        {
+            if (conn != null && conn.State == System.Data.ConnectionState.Open)
+            {
+                conn.Close();
+            }
 
 
 
-    }
+        }
 }
